@@ -315,7 +315,7 @@ class Sistema:
     def _carregar_dados_iniciais(self):
         # Alunos e servidores iniciais
         self.pessoas.append(Alunos("Érika Souza", "erika@email.com", 123456, "Engenharia"))
-        self.pessoas.append(Alunos("Vinicius Pires", "vinicius@email.com", 654321, "Computação"))
+        self.pessoas.append(Alunos("Tarsila", "tarsila.pimentel@email.com", 654321, "Computação"))
         self.pessoas.append(Servidores("Carlos Silva", "carlos@campus.br", 9876, "Técnico"))
 
         self.equipamentos.append(Bolas("Futsal", 3, "Penalty Oficial"))
