@@ -127,7 +127,7 @@ python main.py
 
 Ao iniciar, o sistema já carrega alguns registros para facilitar os testes:
 
-- **Alunos**: Érika Souza (RA 123456), Vinicius Pires (RA 654321)
+- **Alunos**: Érika Souza (RA 123456), Tarsila Pimentel (RA 654321)
 - **Servidor**: Carlos Silva (ID 9876)
 - **Equipamentos**: Bola de futsal (3), Raquete de tênis de mesa (2), Coletes verdes (10), Mountain bike (2)
 
