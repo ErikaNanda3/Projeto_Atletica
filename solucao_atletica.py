@@ -55,7 +55,7 @@ class Pessoas(ABC): # Classe abstrata, serve como molde OBRIGATÓRIO para as cla
 
     @email.setter
     def email(self, valor: str):
-        if valor is not None and "@" not in valor:
+        if valor is not None and (not isinstance(valor, str) or "@" not in valor):
             raise DadosInvalidosError("E-mail inválido (falta o @).")
         self._email = valor
 
@@ -100,6 +100,8 @@ class Alunos(Pessoas):
 
     def __init__(self, nome: str, email: str, RA: int, curso: str):
         super().__init__(nome, email)
+        if not isinstance(RA, int) or isinstance(RA, bool) or RA <= 0:
+            raise DadosInvalidosError("RA deve ser um inteiro positivo.")
         self.__RA = RA
         self.curso = curso
 
@@ -117,6 +119,8 @@ class Servidores(Pessoas):
 
     def __init__(self, nome: str, email: str, ID: int, cargo: str):
         super().__init__(nome, email)
+        if not isinstance(ID, int) or isinstance(ID, bool) or ID <= 0:
+            raise DadosInvalidosError("ID deve ser um inteiro positivo.")
         self.__ID = ID
         self.cargo = cargo
 
@@ -136,9 +140,10 @@ class Equipamentos(ABC): # ADD: Herda de ABC para poder ter método abstrato
     def __init__(self, nome_Equipamento: str, vistoria: bool, quantidade_Equipamentos: int, descricao: str):
         self.__nome = nome_Equipamento
         self.vistoria = vistoria                        # usa o setter
-        self.__total = 0
-        self.quantidade = quantidade_Equipamentos       # usa o setter
-        self.__disponiveis = self.__total
+        if not isinstance(quantidade_Equipamentos, int) or isinstance(quantidade_Equipamentos, bool) or quantidade_Equipamentos < 0:
+            raise DadosInvalidosError("Quantidade deve ser um inteiro >= 0.")
+        self.__total = quantidade_Equipamentos
+        self.__disponiveis = quantidade_Equipamentos
         self.descricao = descricao
 
     @property
@@ -161,9 +166,14 @@ class Equipamentos(ABC): # ADD: Herda de ABC para poder ter método abstrato
 
     @quantidade.setter
     def quantidade(self, valor: int):
-        if not isinstance(valor, int) or valor < 0:
+        if not isinstance(valor, int) or isinstance(valor, bool) or valor < 0:
             raise DadosInvalidosError("Quantidade deve ser um inteiro >= 0.")
+        emprestadas = self.__total - self.__disponiveis
+        if valor < emprestadas:
+            raise DadosInvalidosError("Quantidade não pode ser menor que o número de unidades emprestadas.")
+        diferenca = valor - self.__total
         self.__total = valor
+        self.__disponiveis += diferenca
 
     @property
     def disponiveis(self) -> int:
@@ -315,7 +325,7 @@ class Sistema:
     def _carregar_dados_iniciais(self):
         # Alunos e servidores iniciais
         self.pessoas.append(Alunos("Érika Souza", "erika@email.com", 123456, "Engenharia"))
-        self.pessoas.append(Alunos("Vinicius Pires", "vinicius@email.com", 654321, "Computação"))
+        self.pessoas.append(Alunos("Tarsila", "tarsila.pimentel@email.com", 654321, "Computação"))
         self.pessoas.append(Servidores("Carlos Silva", "carlos@campus.br", 9876, "Técnico"))
 
         self.equipamentos.append(Bolas("Futsal", 3, "Penalty Oficial"))
