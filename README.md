@@ -6,7 +6,7 @@ Trabalho da disciplina de **Programação Orientada a Objetos (POO)**, desenvolv
 
 - Érika Fernanda
 - Tarsila Pimentel
-- Emily
+- Emilly Siqueira
 
 ## Sobre o projeto
 
