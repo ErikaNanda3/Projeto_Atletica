@@ -139,7 +139,7 @@ Ao iniciar, o sistema já carrega alguns registros para facilitar os testes:
 
 - Os dados ficam apenas em memória: ao encerrar o programa, tudo é perdido.
 - Um resultado "Com Avarias" na vistoria da bicicleta é registrado no histórico, mas não bloqueia o equipamento.
-- - Código em Java como comparação dos fundamentos de POO aplicados em diferentes linguagens.
+- Código em Java como comparação dos fundamentos de POO aplicados em diferentes linguagens.
 
 ## Instituição
 
