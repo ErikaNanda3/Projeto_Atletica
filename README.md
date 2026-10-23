@@ -1,6 +1,6 @@
 # Sistema de Empréstimo de Equipamentos Esportivos
 
-Trabalho da disciplina de **Programação Orientada a Objetos (POO)**, desenvolvido em **Python** por estudantes de **Engenharia de Computação** da **UTFPR – Campus Apucarana**.
+Trabalho da disciplina de **Programação Orientada a Objetos (POO)**, desenvolvido em **Python** e **Java** por estudantes de **Engenharia de Computação** da **UTFPR – Campus Apucarana**.
 
 ## Equipe
 
