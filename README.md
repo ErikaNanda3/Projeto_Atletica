@@ -4,9 +4,9 @@ Trabalho da disciplina de **Programação Orientada a Objetos (POO)**, desenvolv
 
 ## Equipe
 
-- Érika Fernanda
-- Tarsila Pimentel
-- Emilly Siqueira
+- Érika Fernanda Souza
+- Tarsila Paiva Pimentel
+- Emilly de Oliveira Siqueira
 
 ## Sobre o projeto
 
@@ -93,20 +93,24 @@ Sistema       -> concentra as regras gerais e as listas de dados
 ### Requisitos
 
 - Python 3.8 ou superior
+- Nenhuma biblioteca externa
 - Terminal com suporte a cores ANSI (opcional, apenas para as mensagens verdes)
 
-### Passos
+### Executar o sistema
 
 ```bash
-# 1. Clone o repositório ou baixe o arquivo
-# 2. Acesse a pasta do projeto
-cd nome-da-pasta
-
-# 3. Execute o programa
-python main.py
+python solucao_atletica.py
 ```
 
-> Substitua `main.py` pelo nome real do arquivo do código.
+O comando deve ser executado no terminal, dentro da pasta do projeto. O sistema abre o menu e mantém os dados em memória até o encerramento.
+
+### Executar os testes automatizados
+
+Na mesma pasta, execute:
+
+```bash
+python -m unittest -v
+```
 
 ## Menu do sistema
 
@@ -127,7 +131,7 @@ python main.py
 
 Ao iniciar, o sistema já carrega alguns registros para facilitar os testes:
 
-- **Alunos**: Érika Souza (RA 123456), Tarsila Pimentel (RA 654321)
+- **Alunos**: Érika Souza (RA 123456), Tarsila (RA 654321)
 - **Servidor**: Carlos Silva (ID 9876)
 - **Equipamentos**: Bola de futsal (3), Raquete de tênis de mesa (2), Coletes verdes (10), Mountain bike (2)
 
